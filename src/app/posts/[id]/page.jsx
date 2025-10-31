@@ -2,7 +2,7 @@ import Link from 'next/link'
 
 import { dbQuery } from '../../dbutils.js'
 
-import { Post } from './post.jsx'
+import { Post } from '../../post.jsx'
 import { PostDeleteButton } from './postdeletebutton.jsx'
 import { NotFound } from '../../notfound.jsx'
 

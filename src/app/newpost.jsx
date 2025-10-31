@@ -1,4 +1,4 @@
-import { auth } from "@clerk/nextjs/server"
+import { auth, currentUser } from "@clerk/nextjs/server"
 
 import { redirect } from 'next/navigation';
 
@@ -9,8 +9,12 @@ export async function NewPost(params) {
     'use server';
 
     const { userId } = await auth();
+    const userName = (await currentUser())?.username;
     const content = formData.get('content');
 
+    await dbQuery(`INSERT INTO users(id, username, description) VALUES($1, $2, $3)
+                   ON CONFLICT (id) DO NOTHING;`,
+                   [userId, userName, 'Hello, world!']);
     await dbQuery('INSERT INTO posts(userid, content) VALUES($1, $2)', [userId, content]);
 
     // This is bad and ugly but I'm not sure how else to approach it

@@ -5,8 +5,7 @@ import Link from 'next/link'
 import { NewPost } from "./newpost.jsx"
 
 export default async function HomePage() {
-  const user = await currentUser();
-  const userName = user?.username;
+  const userName = (await currentUser())?.username;
 
   return (
     <>

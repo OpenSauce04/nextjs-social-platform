@@ -1,7 +1,7 @@
 import Link from 'next/link'
 import { clerkClient } from '@clerk/nextjs/server';
 
-import { dbQuery } from '../../dbutils.js'
+import { dbQuery } from './dbutils.js'
 
 export async function Post(params) {
   const { id, userid, content } = params.post;

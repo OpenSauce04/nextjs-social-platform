@@ -3,4 +3,4 @@
 - [ ] Use 1 or more Radix UI Primitive component, or something similar (e.g. use of a different component library to enhance UX, not just Tailwind).
 - [ ] Enable users to create a user profile, and input profile information (such as a user biography) using a form. Users and user information should be stored in their own table in the database and handled with an appropriate route.
 - [x] Enable users to create posts associated with their Clerk userId.
-- [ ] Posts should be displayed on the user’s profile page.
+- [x] Posts should be displayed on the user’s profile page.
