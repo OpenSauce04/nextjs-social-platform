@@ -1,6 +1,7 @@
 import { auth, currentUser } from "@clerk/nextjs/server"
-
 import { redirect } from 'next/navigation';
+
+import { Button } from "@radix-ui/themes";
 
 import { dbQuery } from './dbutils.js'
 
@@ -31,7 +32,7 @@ export async function NewPost(params) {
         <h2>New Post</h2>
         <textarea id="postContentInput" name="content" />
         <br/>
-        <button type="submit">Send</button>
+        <Button type="submit">Send</Button>
       </form>
     </>
   );

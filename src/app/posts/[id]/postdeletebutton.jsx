@@ -1,5 +1,7 @@
 import { redirect } from 'next/navigation';
 
+import { Button } from "@radix-ui/themes";
+
 import { dbQuery } from '../../dbutils.js'
 
 export function PostDeleteButton(params) {
@@ -12,8 +14,8 @@ export function PostDeleteButton(params) {
   }
 
   return (
-    <button onClick={deletePost}>
+    <Button onClick={deletePost}>
       Delete
-    </button>
+    </Button>
   )
 }
