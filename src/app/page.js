@@ -2,6 +2,8 @@ import { SignedIn, SignedOut, SignOutButton } from '@clerk/nextjs'
 import { currentUser } from "@clerk/nextjs/server"
 import Link from 'next/link'
 
+import { NewPost } from "./newpost.jsx"
+
 export default async function HomePage() {
   const user = await currentUser();
   const userName = user?.username;
@@ -18,6 +20,7 @@ export default async function HomePage() {
       </SignedOut>
       <SignedIn>
         <SignOutButton />
+        <NewPost />
       </SignedIn>
     </>
   );
