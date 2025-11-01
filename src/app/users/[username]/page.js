@@ -1,9 +1,6 @@
-import Link from 'next/link'
-
-import { Button } from "@radix-ui/themes";
-
 import { dbQuery } from '../../dbutils.js'
 
+import { BackButton } from '../../backbutton.jsx'
 import { UserHeader } from './userheader.jsx'
 import { UserPostList } from './userpostlist.jsx'
 import { NotFound } from '../../notfound.jsx'
@@ -18,11 +15,7 @@ export default async function UserPage({ params }) {
 
   return (
     <>
-      <Link href="/">
-        <Button>
-          &larr; Back
-        </Button>
-      </Link>
+      <BackButton url='/' />
       <UserHeader user={user} />
       <UserPostList userId={user.id} />
       <br/>

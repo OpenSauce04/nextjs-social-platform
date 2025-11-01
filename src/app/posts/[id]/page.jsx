@@ -1,9 +1,6 @@
-import Link from 'next/link'
-
-import { Button } from "@radix-ui/themes";
-
 import { dbQuery } from '../../dbutils.js'
 
+import { BackButton } from '../../backbutton.jsx'
 import { Post } from '../../post.jsx'
 import { PostDeleteButton } from './postdeletebutton.jsx'
 import { NotFound } from '../../notfound.jsx'
@@ -18,11 +15,7 @@ export default async function PostPage({ params }) {
 
   return (
     <>
-      <Link href="/">
-        <Button>
-          &larr; Back
-        </Button>
-      </Link>
+      <BackButton url='/' />
       <Post post={post} />
       <PostDeleteButton postId={id} />
       <br/>

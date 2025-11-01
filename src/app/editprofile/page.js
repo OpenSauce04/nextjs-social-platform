@@ -1,9 +1,9 @@
 import { SignedIn, SignedOut } from '@clerk/nextjs'
 import { currentUser } from "@clerk/nextjs/server"
 import Link from 'next/link'
-
 import { Button } from "@radix-ui/themes";
 
+import { BackButton } from "../backbutton.jsx"
 import { EditBio } from "./editbio.jsx"
 
 export default async function HomePage() {
@@ -11,11 +11,7 @@ export default async function HomePage() {
 
   return (
     <>
-      <Link href="/">
-        <Button>
-          &larr; Back
-        </Button>
-      </Link>
+      <BackButton url='/' />
       <h1>
         Edit profile: {userName}
       </h1>
