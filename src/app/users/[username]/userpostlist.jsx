@@ -8,8 +8,6 @@ export async function UserPostList(params) {
   return (
     <>
       <h2>Posts</h2>
-      <br/>
-      <br/>
       {
         postData.map((post) => {
           return <div key={post.id}>

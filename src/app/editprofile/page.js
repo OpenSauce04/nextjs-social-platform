@@ -1,31 +1,34 @@
-import { SignedIn, SignedOut, SignOutButton } from '@clerk/nextjs'
+import { SignedIn, SignedOut } from '@clerk/nextjs'
 import { currentUser } from "@clerk/nextjs/server"
 import Link from 'next/link'
 
 import { Button } from "@radix-ui/themes";
 
-import { NewPost } from "./newpost.jsx"
+import { EditBio } from "./editbio.jsx"
 
 export default async function HomePage() {
   const userName = (await currentUser())?.username;
 
   return (
     <>
+      <Link href="/">
+        <Button>
+          &larr; Back
+        </Button>
+      </Link>
       <h1>
-        Current user: {userName}
+        Edit profile: {userName}
       </h1>
       <SignedOut>
         <Link href='/signin'>
+          <p>
+            Please sign in before editing your profile:
+          </p>
           <Button>Sign in</Button>
         </Link>
       </SignedOut>
       <SignedIn>
-        <Link href='/editprofile'>
-          <Button>Edit profile</Button>
-        </Link> <SignOutButton>
-          <Button>Sign out</Button>
-        </SignOutButton>
-        <NewPost />
+        <EditBio />
       </SignedIn>
     </>
   );
