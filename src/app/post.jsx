@@ -16,7 +16,7 @@ export async function Post(params) {
       <p>
         <Link href={postURL}>Post #{id}</Link> by <ProfileLink userName={userName} />:
       </p>
-      <p className="respect-newlines">
+      <p style={{whiteSpace: 'pre-line'}}>
         {content}
       </p>
     </div>
