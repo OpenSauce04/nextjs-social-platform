@@ -3,7 +3,8 @@ import { dbQuery } from '../../dbutils.js';
 import { Post } from '../../post.jsx';
 
 export async function UserPostList(params) {
-  var postData = (await dbQuery('SELECT * FROM posts ORDER BY id DESC')).rows;
+  const { userId } = params;
+  const postData = (await dbQuery('SELECT * FROM posts WHERE userid = $1 ORDER BY id DESC', [userId])).rows;
 
   return (
     <>
