@@ -3,7 +3,7 @@ export function UserHeader(params) {
   return (
     <div>
       <h2>{username}</h2>
-      <b>{description}</b>
+      <b style={{whiteSpace: 'pre-line'}}>{description}</b>
       <br/>
       <br/>
     </div>
