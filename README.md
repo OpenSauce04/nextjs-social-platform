@@ -1,6 +1,13 @@
+Base Requirements:
+
 - [x] Set up user sign-up and user login using Clerk.
 - [x] Create and display an error/not found page if the user visits a page that doesn’t exist.
 - [x] Use 1 or more Radix UI Primitive component, or something similar (e.g. use of a different component library to enhance UX, not just Tailwind).
 - [x] Enable users to create a user profile, and input profile information (such as a user biography) using a form. Users and user information should be stored in their own table in the database and handled with an appropriate route.
 - [x] Enable users to create posts associated with their Clerk userId.
 - [x] Posts should be displayed on the user’s profile page.
+
+Stretch Requirements:
+- [x] Allow users to delete their content.
+- [x] Allow users to view other profiles directly from posts they see on the global timeline, using a dynamic users route (e.g. /user/[userId]).
+- [x] Create and display an error/not found page if the user visits another users profile that doesn’t exist.
