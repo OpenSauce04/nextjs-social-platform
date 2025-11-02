@@ -1,4 +1,4 @@
-import Link from 'next/link'
+import Link from 'next/link';
 import { Button } from "@radix-ui/themes";
 
 export function BackButton(params) {
@@ -8,5 +8,5 @@ export function BackButton(params) {
         &larr; Back
       </Button>
     </Link>
-  )
+  );
 }

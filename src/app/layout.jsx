@@ -25,6 +25,9 @@ export default function RootLayout({ children }) {
       <Theme>
         <html lang="en">
           <body className={`${geistSans.variable} ${geistMono.variable}`}>
+            <h1>
+              Next Social Platform
+            </h1>
             {children}
           </body>
         </html>

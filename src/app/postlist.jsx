@@ -1,8 +1,10 @@
-import { dbQuery } from '../../dbutils.js';
+import { dbQuery } from './dbutils.js';
 
-import { Post } from '../../post.jsx';
+import { Post } from './post.jsx';
 
-export async function UserPostList(params) {
+export async function PostList(params) {
+  const byOldest = params.byOldest;
+
   var postData = (await dbQuery('SELECT * FROM posts ORDER BY id DESC')).rows;
 
   return (
@@ -16,7 +18,6 @@ export async function UserPostList(params) {
                  </div>
         })
       }
-      <hr/>
     </>
   );
 }

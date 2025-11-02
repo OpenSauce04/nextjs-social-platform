@@ -1,3 +1,3 @@
 export function NotFound() {
-  return <h1>Page Not Found</h1>
+  return <h2>Page Not Found</h2>
 }

@@ -1,12 +1,12 @@
-import { dbQuery } from '../../dbutils.js'
+import { dbQuery } from '../../dbutils.js';
 
-import { BackButton } from '../../backbutton.jsx'
-import { Post } from '../../post.jsx'
-import { PostDeleteButton } from './postdeletebutton.jsx'
-import { NotFound } from '../../notfound.jsx'
+import { BackButton } from '../../backbutton.jsx';
+import { Post } from '../../post.jsx';
+import { PostDeleteButton } from './postdeletebutton.jsx';
+import { NotFound } from '../../notfound.jsx';
 
 export default async function PostPage({ params }) {
-  const id = (await params).id
+  const id = (await params).id;
   const post = (await dbQuery('SELECT * FROM posts WHERE id = $1', [id])).rows[0];
 
   if (post === undefined) {
@@ -16,11 +16,10 @@ export default async function PostPage({ params }) {
   return (
     <>
       <BackButton url='/' />
-      <Post post={post} />
-      <PostDeleteButton postId={id} />
-      <br/>
-      <br/>
       <hr/>
+      <Post post={post} />
+      <hr/>
+      <PostDeleteButton postId={id} />
     </>
   );
 }
