@@ -1,3 +1,5 @@
+import { auth } from "@clerk/nextjs/server"
+
 import { dbQuery } from '../../dbutils.js';
 
 import { BackButton } from '../../backbutton.jsx';
@@ -13,13 +15,18 @@ export default async function PostPage({ params }) {
     return <NotFound />
   }
 
+  const { userId } = await auth();
+  const postByCurrentUser = (post.userid === userId);
+
   return (
     <>
       <BackButton url='/' />
       <hr/>
       <Post post={post} />
       <hr/>
-      <PostDeleteButton postId={id} />
+      {
+        postByCurrentUser ? <PostDeleteButton postId={id} /> : undefined
+      }
     </>
   );
 }
